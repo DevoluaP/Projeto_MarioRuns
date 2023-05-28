@@ -2,15 +2,45 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
+}
+
+#aviso {
+    padding-left: 1vw;
+    background-color: #f00;
+    color: #fff;
+}
+
+#aviso p {
+    font-size: 2em;
 }
 
 .game-board {
-    width: 100%;
-    height: 770px;
+    width: 100vw;
+    height: 97vh;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+#tempo {
+    margin-left: 1vw;
+    color: #007905;
+    font-size: 2vh;
+    font-family: 'Alkatra', cursive;
+}
+
+#returnGame {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 115vh;
+    font-size: 1.5vh;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(0, 0, 0, 0.6);
+    animation: appear 1s;
 }
 
 .pipe {
@@ -31,19 +61,61 @@
 }
 
 .clouds {
-    width: 550px;
+    width: 50vw;
+    bottom: 40vh;
     position: absolute;
-    animation: clouds-animation 20s infinite linear;
+    animation: clouds-animation 15s infinite linear;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+}
+
+p {
+    font-family: 'Alkatra', cursive;
+    font-size: 2vh;
+}
+
+a {
+    text-decoration: none;
+    color: #007905;
+}
+
+a:hover {
+    color: #53ff31;
+}
+
+
+h1::selection, h2::selection, span::selection, p::selection, a::selection, img::selection {
+    color: #0037d6;
+    background-color: #e80000;
+}
+
+@media (min-width: 768px) {
+    #aviso {
+        display: none;
+    }
+
+    #tempo {
+        font-size: 2vw;
+    }
+
+    #returnGame {
+        font-size: 1.5vw;
+    }
 }
 
 @keyframes pipe-animation {
     
     from {
-        right: -80px;
+        right: -20vw;
     }
 
     to {
-        right: 100%;
+        right: 100vw;
     }
 
 }
@@ -55,15 +127,15 @@
     }
 
     40% {
-        bottom: 180px;
+        bottom: 220px;
     }
 
     50% {
-        bottom: 180px;
+        bottom: 220px;
     }
 
     60% {
-        bottom: 180px;
+        bottom: 220px;
     }
 
     100% {
@@ -74,31 +146,20 @@
 
 @keyframes clouds-animation {
     from {
-        right: -550px;
+        right: -50vw;
     }
 
     to {
-        right: 100%;
+        right: 100vw;
     }
 }
 
-.rodape {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
 
-p {
-    font-family: 'Alkatra', cursive;
-    font-size: 14px;
-    position: static;
-}
-
-a {
-    text-decoration: none;
-    color: #008000;
-}
-
-a:hover {
-    color: #42b242;
+    100% {
+        opacity: 1;
+    }
 }

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-    <html lang="en">
+    <html lang="pt-br">
 
         <head>
             <meta charset="UTF-8">
@@ -11,20 +11,34 @@
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
-            <script src="JS/script.js" defer></script>
-            <title>Mario</title>
+            <title>Mario Runs</title>
         </head>
 
             <body>
+                
                 <div class="game-board">
+                    <div id="aviso">
+                        <p>Este jogo não é adequado para dispositivos com resolução menor que "768px". Portanto, a experiência não será a mesma.</p>
+                    </div>
+
+                    <div id="tempo">
+                        <h2>Score: <span id="score">0</span></h2>
+                    </div>
+
+                    <div id="returnGame">
+                        <h1>Pressione uma tecla para recomeçar</h1>
+                    </div>
+
                     <img src="imagens/nuvens.png" class="clouds">
                     <img src="imagens/mario.gif" class="mario">
                     <img src="imagens/pipe.png" class="pipe">
                 </div>
 
-                <footer class="rodape">
-                    <p>Developed by <a href="https://github.com/roluaP" target="_blank">Paulo Henrique</a></p>
+                <footer>
+                    <p>Desenvolvido por <a href="https://github.com/roluaP" target="_blank">Paulo Henrique</a></p>
                 </footer>
+
+                <script src="JS/script.js"></script>
             </body>
 
     </html>
