@@ -28,7 +28,7 @@
     margin-left: 1vw;
     color: #007905;
     font-size: 2vh;
-    font-family: 'Alkatra', cursive;
+    font-family: 'VT323', monospace;
 }
 
 #returnGame {
@@ -38,7 +38,7 @@
     text-align: center;
     height: 115vh;
     font-size: 1.5vh;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'VT323', monospace;
     color: rgba(0, 0, 0, 0.6);
     animation: appear 1s;
 }
