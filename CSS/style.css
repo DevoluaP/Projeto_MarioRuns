@@ -5,16 +5,6 @@
     overflow: hidden;
 }
 
-#aviso {
-    padding-left: 1vw;
-    background-color: #f00;
-    color: #fff;
-}
-
-#aviso p {
-    font-size: 2em;
-}
-
 .game-board {
     width: 100vw;
     height: 97vh;
@@ -25,9 +15,11 @@
 }
 
 #tempo {
-    margin-left: 1vw;
+    position: absolute;
+    top: 10px;
+    left: 10px;
     color: #007905;
-    font-size: 2vh;
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
     font-family: 'VT323', monospace;
 }
 
@@ -36,22 +28,23 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 115vh;
-    font-size: 1.5vh;
+    height: 100%;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     font-family: 'VT323', monospace;
     color: rgba(0, 0, 0, 0.6);
     animation: appear 1s;
+    padding: 10px;
 }
 
 .pipe {
-    width: 80px;
+    width: clamp(40px, 8vw, 60px);
     bottom: 0;
     position: absolute;
     animation: pipe-animation 1.5s infinite linear;
 }
 
 .mario {
-    width: 150px;
+    width: clamp(60px, 12vw, 100px);
     bottom: 0;
     position: absolute;
 }
@@ -61,7 +54,7 @@
 }
 
 .clouds {
-    width: 50vw;
+    width: clamp(120px, 40vw, 250px);
     bottom: 40vh;
     position: absolute;
     animation: clouds-animation 15s infinite linear;
@@ -76,7 +69,7 @@ footer {
 
 p {
     font-family: 'Alkatra', cursive;
-    font-size: 2vh;
+    font-size: clamp(0.7rem, 1.8vh, 0.9rem);
 }
 
 a {
@@ -88,78 +81,28 @@ a:hover {
     color: #53ff31;
 }
 
-
 h1::selection, h2::selection, span::selection, p::selection, a::selection, img::selection {
     color: #0037d6;
     background-color: #e80000;
 }
 
-@media (min-width: 768px) {
-    #aviso {
-        display: none;
-    }
-
-    #tempo {
-        font-size: 2vw;
-    }
-
-    #returnGame {
-        font-size: 1.5vw;
-    }
-}
-
 @keyframes pipe-animation {
-    
-    from {
-        right: -20vw;
-    }
-
-    to {
-        right: 100vw;
-    }
-
+    from { right: -20vw; }
+    to { right: 100vw; }
 }
 
 @keyframes jump {
-    
-    0% {
-        bottom: 0;
-    }
-
-    40% {
-        bottom: 220px;
-    }
-
-    50% {
-        bottom: 220px;
-    }
-
-    60% {
-        bottom: 220px;
-    }
-
-    100% {
-        bottom: 0;
-    }
-
+    0% { bottom: 0; }
+    40%, 50%, 60% { bottom: 25vh; }
+    100% { bottom: 0; }
 }
 
 @keyframes clouds-animation {
-    from {
-        right: -50vw;
-    }
-
-    to {
-        right: 100vw;
-    }
+    from { right: -50vw; }
+    to { right: 100vw; }
 }
 
 @keyframes appear {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
